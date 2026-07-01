@@ -1,6 +1,6 @@
 const EVENT = {
-  title: "민준과 라일라의 결혼식",
-  couple: "민준 · 라일라",
+  title: "권기빈과 송시아의 결혼식",
+  couple: "권기빈 · 송시아",
   startLocal: "20261024T123000",
   endLocal: "20261024T143000",
   location: "서울 라움아트센터 그레이스홀, 서울 강남구 언주로 564",
@@ -128,7 +128,7 @@ function setupCalendarDownload() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "minjun-laila-wedding.ics";
+    link.download = "givin-sia-wedding.ics";
     document.body.appendChild(link);
     link.click();
     link.remove();
