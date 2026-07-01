@@ -68,32 +68,17 @@
           <div class="hero__actions" aria-label="주요 행동">
             <div class="hero__primary-actions">
               <a class="button button--light" href="#invitation">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 19.5V6.5A2.5 2.5 0 0 1 6.5 4H20v15H6.5A2.5 2.5 0 0 0 4 21.5" />
-                  <path d="M8 7h8M8 11h6" />
-                </svg>
                 초대장 보기
               </a>
               <a class="button button--primary" href="#rsvp">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="m20 6-11 11-5-5" />
-                </svg>
                 RSVP
               </a>
             </div>
             <div class="hero__quick-actions">
               <button class="button button--ghost" type="button" id="calendarButton">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M8 2v4M16 2v4M4 10h16" />
-                  <rect x="4" y="4" width="16" height="18" rx="2" />
-                </svg>
                 일정 저장
               </button>
               <a class="button button--ghost" href="#directions">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
-                  <circle cx="12" cy="10" r="2.5" />
-                </svg>
                 길찾기
               </a>
             </div>
@@ -114,30 +99,21 @@
                 맞이합니다. 바쁘신 걸음이지만 함께해 주시면 더없이 큰 기쁨이겠습니다.
               </p>
             </div>
-            <div class="couple-emblem" aria-label="신랑 신부 캐릭터">
-              <svg viewBox="0 0 320 220" role="img">
-                <title>한국과 이집트의 상징을 든 신랑 신부 캐릭터</title>
-                <path class="emblem-sun" d="M160 24a68 68 0 1 1 0 136 68 68 0 0 1 0-136Z" />
-                <path class="emblem-river" d="M22 174c42-24 73 14 114-6 54-26 87-7 162 12" />
-                <g class="character character--left">
-                  <circle cx="105" cy="88" r="28" />
-                  <path d="M68 168c8-42 23-59 37-59s29 17 37 59" />
-                  <path d="M80 132h50" />
-                  <path d="M72 72c13-23 53-23 66 0" />
-                  <path d="M54 100l-22 20 14 16 24-24" />
-                  <path d="M50 88h26v18H50z" />
-                </g>
-                <g class="character character--right">
-                  <circle cx="214" cy="88" r="28" />
-                  <path d="M172 174c9-46 25-65 42-65s33 19 42 65" />
-                  <path d="M188 132h54" />
-                  <path d="M187 70c12-28 52-30 67 0" />
-                  <path d="M247 102l28 19-12 18-29-24" />
-                  <path d="M248 84h26v22h-26z" />
-                </g>
-                <path class="emblem-ring" d="M146 134a14 14 0 1 0 28 0 14 14 0 0 0-28 0Zm20-14 9-10" />
-                <path class="emblem-pyramid" d="m244 180 32-58 32 58Z" />
-              </svg>
+            <div class="couple-emblem" aria-label="권기빈과 송시아의 웨딩 문장">
+              <div class="wedding-crest">
+                <p class="crest__eyebrow">Wedding Invitation</p>
+                <div class="crest__mark" aria-hidden="true">
+                  <span>G</span>
+                  <i></i>
+                  <span>S</span>
+                </div>
+                <p class="crest__names">권기빈 · 송시아</p>
+                <div class="crest__route" aria-hidden="true">
+                  <span>Seoul</span>
+                  <span>Cairo</span>
+                </div>
+                <p class="crest__date">2026.10.24</p>
+              </div>
             </div>
           </div>
         </section>
@@ -150,15 +126,21 @@
             </div>
             <div class="journey-map" aria-hidden="true">
               <span class="journey-map__line"></span>
-              <span class="journey-map__plane">
-                <svg viewBox="0 0 24 24">
-                  <path d="M22 2 11 13" />
-                  <path d="m22 2-7 20-4-9-9-4 20-7Z" />
-                </svg>
+              <span class="journey-map__point journey-map__point--seoul">
+                <small>01</small>
+                <strong>Seoul</strong>
+                <em>서울</em>
               </span>
-              <span class="journey-map__pin journey-map__pin--seoul">서울</span>
-              <span class="journey-map__pin journey-map__pin--cairo">카이로</span>
-              <span class="journey-map__pin journey-map__pin--oasis">우리</span>
+              <span class="journey-map__point journey-map__point--cairo">
+                <small>02</small>
+                <strong>Cairo</strong>
+                <em>카이로</em>
+              </span>
+              <span class="journey-map__point journey-map__point--oasis">
+                <small>03</small>
+                <strong>Oasis</strong>
+                <em>우리</em>
+              </span>
             </div>
             <div class="story-grid">
               <article class="story-card">
@@ -248,40 +230,22 @@
             </div>
             <div class="detail-grid">
               <article class="detail-card">
-                <span class="detail-card__icon">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M8 2v4M16 2v4M4 10h16" />
-                    <rect x="4" y="4" width="16" height="18" rx="2" />
-                  </svg>
-                </span>
+                <span class="detail-card__label">Date</span>
                 <h3>날짜와 시간</h3>
                 <p>2026년 10월 24일 토요일<br />오후 12시 30분</p>
               </article>
               <article class="detail-card">
-                <span class="detail-card__icon">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
-                    <circle cx="12" cy="10" r="2.5" />
-                  </svg>
-                </span>
+                <span class="detail-card__label">Venue</span>
                 <h3>장소</h3>
                 <p>서울 라움아트센터 그레이스홀<br />서울 강남구 언주로 564</p>
               </article>
               <article class="detail-card">
-                <span class="detail-card__icon">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M3 7h18M6 7v12M18 7v12M8 11h8M8 15h8" />
-                  </svg>
-                </span>
+                <span class="detail-card__label">Order</span>
                 <h3>예식 순서</h3>
                 <p>입장 · 혼인서약 · 축가 · 사진촬영<br />피로연은 예식 후 이어집니다.</p>
               </article>
               <article class="detail-card">
-                <span class="detail-card__icon">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.32 1.78.6 2.63a2 2 0 0 1-.45 2.11L9 10.7a16 16 0 0 0 4.3 4.3l1.24-1.25a2 2 0 0 1 2.11-.45c.85.28 1.73.48 2.63.6A2 2 0 0 1 22 16.92Z" />
-                  </svg>
-                </span>
+                <span class="detail-card__label">Contact</span>
                 <h3>연락처</h3>
                 <p>
                   신랑측 010-1234-5678<br />
@@ -349,14 +313,18 @@
                 <figcaption>서울과 카이로 사이에 놓인 약속</figcaption>
               </figure>
               <figure class="photo-card photo-card--illustrated">
-                <div class="mini-poster mini-poster--nile" aria-hidden="true">
-                  <span></span><span></span><span></span>
+                <div class="stationery-card stationery-card--palette" aria-hidden="true">
+                  <span>Nile Blue</span>
+                  <span>Ivory</span>
+                  <span>Gold</span>
                 </div>
                 <figcaption>나일 블루와 골드로 만든 웨딩 팔레트</figcaption>
               </figure>
               <figure class="photo-card photo-card--illustrated">
-                <div class="mini-poster mini-poster--ring" aria-hidden="true">
-                  <span></span><span></span>
+                <div class="stationery-card stationery-card--rings" aria-hidden="true">
+                  <span>G</span>
+                  <i></i>
+                  <span>S</span>
                 </div>
                 <figcaption>오아시스에서 만난 두 개의 반지</figcaption>
               </figure>
@@ -506,30 +474,20 @@
 
       <nav class="bottom-nav" aria-label="빠른 이동">
         <a href="#details">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M8 2v4M16 2v4M4 10h16" />
-            <rect x="4" y="4" width="16" height="18" rx="2" />
-          </svg>
-          일정
+          <span>일정</span>
+          <small>Date</small>
         </a>
         <a href="#directions">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
-            <circle cx="12" cy="10" r="2.5" />
-          </svg>
-          지도
+          <span>지도</span>
+          <small>Map</small>
         </a>
         <a href="#rsvp">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="m20 6-11 11-5-5" />
-          </svg>
-          RSVP
+          <span>RSVP</span>
+          <small>Reply</small>
         </a>
         <a href="#guestbook">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 3 9.4 8.3 3.5 9.2l4.3 4.1-1 5.9L12 16.4l5.2 2.8-1-5.9 4.3-4.1-5.9-.9Z" />
-          </svg>
-          방명록
+          <span>방명록</span>
+          <small>Wish</small>
         </a>
       </nav>
     </div>
