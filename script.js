@@ -156,7 +156,19 @@ async function copyText(text) {
 }
 
 function getShareUrl() {
-  return window.location.href.split("#")[0];
+  const url = new URL(window.location.href);
+  url.hash = "";
+  url.search = "";
+
+  if (url.pathname.endsWith("/admin.html")) {
+    url.pathname = url.pathname.replace(/admin\.html$/, "");
+  }
+
+  if (url.pathname.endsWith("/index.html")) {
+    url.pathname = url.pathname.replace(/index\.html$/, "");
+  }
+
+  return url.toString();
 }
 
 function setupShare() {
@@ -336,6 +348,61 @@ function renderStats() {
     .join("");
 }
 
+const ATTENDANCE_LABELS = {
+  yes: "참석",
+  no: "불참",
+};
+
+const MEAL_LABELS = {
+  regular: "일반",
+  halal: "할랄",
+  vegetarian: "채식",
+};
+
+function formatRsvpDate(value) {
+  if (!value) return "-";
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return String(value);
+  return new Intl.DateTimeFormat("ko-KR", {
+    dateStyle: "short",
+    timeStyle: "short",
+  }).format(date);
+}
+
+function renderRsvpTable() {
+  const body = $("#rsvpTableBody");
+  const empty = $("#rsvpEmpty");
+  if (!body) return;
+
+  const savedEntries = getRsvps();
+  const entries = savedEntries.toSorted
+    ? savedEntries.toSorted((a, b) => Date.parse(b.createdAt || "") - Date.parse(a.createdAt || ""))
+    : [...savedEntries].sort((a, b) => Date.parse(b.createdAt || "") - Date.parse(a.createdAt || ""));
+
+  body.innerHTML = "";
+  empty?.classList.toggle("is-visible", entries.length === 0);
+
+  entries.forEach((entry) => {
+    const row = document.createElement("tr");
+    const cells = [
+      formatRsvpDate(entry.createdAt),
+      entry.name || "-",
+      ATTENDANCE_LABELS[entry.attendance] || entry.attendance || "-",
+      `${Number(entry.companions || 0)}명`,
+      MEAL_LABELS[entry.meal] || entry.meal || "-",
+      entry.message || "",
+    ];
+
+    cells.forEach((value) => {
+      const cell = document.createElement("td");
+      cell.textContent = value;
+      row.appendChild(cell);
+    });
+
+    body.appendChild(row);
+  });
+}
+
 function setupRsvp() {
   const form = $("#rsvpForm");
   if (!form) return;
@@ -357,6 +424,7 @@ function setupRsvp() {
 
     saveRsvp(entry);
     renderStats();
+    renderRsvpTable();
     form.reset();
 
     const gate = $("#pyramidGate");
@@ -468,6 +536,7 @@ function init() {
   setupCsvExport();
   setupGuestbook();
   renderStats();
+  renderRsvpTable();
 }
 
 init();

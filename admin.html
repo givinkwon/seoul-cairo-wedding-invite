@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>RSVP 관리 확인 | 권기빈 · 송시아</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="admin-page">
+    <div class="admin-shell">
+      <header class="admin-header">
+        <div>
+          <p class="section-kicker">RSVP Dashboard</p>
+          <h1>관리 확인 페이지</h1>
+          <p class="lead">
+            초대장 본문에서는 보이지 않는 RSVP 확인용 페이지입니다.
+          </p>
+        </div>
+        <div class="admin-actions">
+          <a class="button button--outline" href="./">초대장 열기</a>
+          <button class="button button--primary" type="button" id="exportCsv">CSV 내보내기</button>
+        </div>
+      </header>
+
+      <main class="admin-main">
+        <section class="admin-section" aria-labelledby="statsTitle">
+          <div class="admin-section__head">
+            <div>
+              <p class="section-kicker">Summary</p>
+              <h2 id="statsTitle">응답 요약</h2>
+            </div>
+            <p class="admin-note">
+              현재 브라우저에 저장된 RSVP 기준입니다.
+            </p>
+          </div>
+          <div class="stats-grid" id="statsGrid"></div>
+        </section>
+
+        <section class="admin-section" aria-labelledby="listTitle">
+          <div class="admin-section__head">
+            <div>
+              <p class="section-kicker">Responses</p>
+              <h2 id="listTitle">응답 목록</h2>
+            </div>
+          </div>
+          <div class="rsvp-table-wrap">
+            <table class="rsvp-table">
+              <thead>
+                <tr>
+                  <th scope="col">시간</th>
+                  <th scope="col">이름</th>
+                  <th scope="col">참석</th>
+                  <th scope="col">동행</th>
+                  <th scope="col">식사</th>
+                  <th scope="col">메시지</th>
+                </tr>
+              </thead>
+              <tbody id="rsvpTableBody"></tbody>
+            </table>
+            <p class="empty-state" id="rsvpEmpty">아직 저장된 RSVP가 없습니다.</p>
+          </div>
+        </section>
+
+        <section class="admin-section admin-section--share" aria-labelledby="shareTitle">
+          <div>
+            <p class="section-kicker">Share</p>
+            <h2 id="shareTitle">초대장 URL</h2>
+            <p class="lead">
+              하객에게 공유할 초대장 QR과 URL 복사 버튼입니다.
+            </p>
+          </div>
+          <div class="qr-panel">
+            <img id="qrImage" alt="초대장 URL QR 코드" loading="lazy" />
+            <button class="text-button" type="button" id="copyUrl">URL 복사</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
