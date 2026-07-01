@@ -3,7 +3,7 @@ const EVENT = {
   couple: "권기빈 · 송시아",
   startLocal: "20270522T123000",
   endLocal: "20270522T143000",
-  location: "서울 라움아트센터 그레이스홀, 서울 강남구 언주로 564",
+  location: "이태원 한남웨딩가든, 서울특별시 용산구 소월로 323",
   description: "서울에서 카이로까지, 우리의 오아시스",
 };
 
