@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="서울에서 카이로까지 이어지는 러브스토리형 모바일 청첩장 MVP"
+    />
+    <title>서울에서 카이로까지, 우리의 오아시스</title>
+    <link rel="preload" href="assets/hero-seoul-cairo.png" as="image" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="hero" id="top">
+        <img
+          class="hero__image"
+          src="assets/hero-seoul-cairo.png"
+          alt=""
+          fetchpriority="high"
+        />
+        <div class="hero__shade" aria-hidden="true"></div>
+
+        <nav class="topbar" aria-label="상단 메뉴">
+          <a class="brand-mark" href="#top" aria-label="처음으로">Our Oasis</a>
+          <div class="topbar__actions">
+            <button
+              class="icon-button"
+              type="button"
+              id="musicToggle"
+              aria-label="음악 켜기"
+              aria-pressed="false"
+              title="음악"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 18V5l11-2v13" />
+                <circle cx="6" cy="18" r="3" />
+                <circle cx="17" cy="16" r="3" />
+              </svg>
+            </button>
+            <button
+              class="icon-button"
+              type="button"
+              id="shareButton"
+              aria-label="초대장 공유"
+              title="공유"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="18" cy="5" r="3" />
+                <circle cx="6" cy="12" r="3" />
+                <circle cx="18" cy="19" r="3" />
+                <path d="m8.6 10.8 6.8-4.1M8.6 13.2l6.8 4.1" />
+              </svg>
+            </button>
+          </div>
+        </nav>
+
+        <div class="hero__content">
+          <p class="eyebrow">Save the Date</p>
+          <h1>민준 <span>&amp;</span> 라일라</h1>
+          <p class="hero__date">2026. 10. 24. Sat · 12:30 PM</p>
+          <p class="hero__venue">서울 라움아트센터 그레이스홀</p>
+          <div class="hero__actions" aria-label="주요 행동">
+            <a class="button button--light" href="#invitation">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 19.5V6.5A2.5 2.5 0 0 1 6.5 4H20v15H6.5A2.5 2.5 0 0 0 4 21.5" />
+                <path d="M8 7h8M8 11h6" />
+              </svg>
+              초대장 보기
+            </a>
+            <button class="button button--light" type="button" id="calendarButton">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 2v4M16 2v4M4 10h16" />
+                <rect x="4" y="4" width="16" height="18" rx="2" />
+              </svg>
+              일정 저장
+            </button>
+            <a class="button button--light" href="#directions">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg>
+              길찾기
+            </a>
+            <a class="button button--primary" href="#rsvp">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m20 6-11 11-5-5" />
+              </svg>
+              RSVP
+            </a>
+          </div>
+        </div>
+
+        <a class="scroll-cue" href="#story">여정 시작</a>
+      </header>
+
+      <main>
+        <section class="section section--intro" id="invitation">
+          <div class="section__inner intro-grid">
+            <div>
+              <p class="section-kicker">Wedding Invitation</p>
+              <h2>서울에서 카이로까지, 우리의 오아시스</h2>
+              <p class="lead">
+                서로 다른 도시에서 시작한 두 사람이 긴 여정 끝에 같은 계절을
+                맞이합니다. 바쁘신 걸음이지만 함께해 주시면 더없이 큰 기쁨이겠습니다.
+              </p>
+            </div>
+            <div class="couple-emblem" aria-label="신랑 신부 캐릭터">
+              <svg viewBox="0 0 320 220" role="img">
+                <title>한국과 이집트의 상징을 든 신랑 신부 캐릭터</title>
+                <path class="emblem-sun" d="M160 24a68 68 0 1 1 0 136 68 68 0 0 1 0-136Z" />
+                <path class="emblem-river" d="M22 174c42-24 73 14 114-6 54-26 87-7 162 12" />
+                <g class="character character--left">
+                  <circle cx="105" cy="88" r="28" />
+                  <path d="M68 168c8-42 23-59 37-59s29 17 37 59" />
+                  <path d="M80 132h50" />
+                  <path d="M72 72c13-23 53-23 66 0" />
+                  <path d="M54 100l-22 20 14 16 24-24" />
+                  <path d="M50 88h26v18H50z" />
+                </g>
+                <g class="character character--right">
+                  <circle cx="214" cy="88" r="28" />
+                  <path d="M172 174c9-46 25-65 42-65s33 19 42 65" />
+                  <path d="M188 132h54" />
+                  <path d="M187 70c12-28 52-30 67 0" />
+                  <path d="M247 102l28 19-12 18-29-24" />
+                  <path d="M248 84h26v22h-26z" />
+                </g>
+                <path class="emblem-ring" d="M146 134a14 14 0 1 0 28 0 14 14 0 0 0-28 0Zm20-14 9-10" />
+                <path class="emblem-pyramid" d="m244 180 32-58 32 58Z" />
+              </svg>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--story" id="story">
+          <div class="section__inner">
+            <div class="section__header">
+              <p class="section-kicker">Love Story</p>
+              <h2>Seoul → Cairo → Our Oasis</h2>
+            </div>
+            <div class="journey-map" aria-hidden="true">
+              <span class="journey-map__line"></span>
+              <span class="journey-map__plane">
+                <svg viewBox="0 0 24 24">
+                  <path d="M22 2 11 13" />
+                  <path d="m22 2-7 20-4-9-9-4 20-7Z" />
+                </svg>
+              </span>
+              <span class="journey-map__pin journey-map__pin--seoul">서울</span>
+              <span class="journey-map__pin journey-map__pin--cairo">카이로</span>
+              <span class="journey-map__pin journey-map__pin--oasis">우리</span>
+            </div>
+            <div class="story-grid">
+              <article class="story-card">
+                <button class="scarab-token" type="button" data-episode="seoul" aria-label="서울 이야기 열기"></button>
+                <span class="story-card__num">01</span>
+                <h3>서울의 첫 인사</h3>
+                <p>낯선 언어보다 먼저 웃음이 통했고, 짧은 인사는 매일의 안부가 되었습니다.</p>
+              </article>
+              <article class="story-card">
+                <button class="scarab-token" type="button" data-episode="cairo" aria-label="카이로 이야기 열기"></button>
+                <span class="story-card__num">02</span>
+                <h3>멀리 있어 더 선명한 마음</h3>
+                <p>시차와 거리는 우리에게 기다림을 가르쳤고, 기다림은 더 다정한 약속이 되었습니다.</p>
+              </article>
+              <article class="story-card">
+                <button class="scarab-token" type="button" data-episode="proposal" aria-label="프로포즈 이야기 열기"></button>
+                <span class="story-card__num">03</span>
+                <h3>사막의 별빛 아래</h3>
+                <p>오래 기억할 밤, 두 사람은 같은 방향을 바라보기로 조용히 결심했습니다.</p>
+              </article>
+              <article class="story-card">
+                <button class="scarab-token" type="button" data-episode="wedding" aria-label="결혼식 이야기 열기"></button>
+                <span class="story-card__num">04</span>
+                <h3>우리의 오아시스</h3>
+                <p>이제 가장 소중한 분들을 모시고 두 문화가 만나는 첫 계절을 시작합니다.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--letter" id="letter">
+          <div class="section__inner">
+            <div class="section__header">
+              <p class="section-kicker">Invitation</p>
+              <h2>초대의 글</h2>
+            </div>
+            <div class="language-tabs" role="tablist" aria-label="초대 문구 언어">
+              <button class="lang-tab is-active" type="button" role="tab" aria-selected="true" data-lang="ko">
+                한국어
+              </button>
+              <button class="lang-tab" type="button" role="tab" aria-selected="false" data-lang="en">
+                English
+              </button>
+              <button class="lang-tab" type="button" role="tab" aria-selected="false" data-lang="ar">
+                العربية
+              </button>
+            </div>
+            <article class="letter-panel is-active" data-letter="ko">
+              <p>
+                서로 다른 곳에서 자란 두 사람이 한 마음으로 새 출발을 약속합니다.
+                저희의 작은 시작을 축복해 주시면 그 마음 오래 간직하며 살겠습니다.
+              </p>
+              <p class="letter-sign">신랑 민준 · 신부 라일라 올림</p>
+            </article>
+            <article class="letter-panel" data-letter="en">
+              <p>
+                We are beginning a new chapter together, shaped by two homes, two cultures,
+                and one shared promise. Your presence and warm wishes would mean the world to us.
+              </p>
+              <p class="letter-sign">With love, Minjun &amp; Laila</p>
+            </article>
+            <article class="letter-panel letter-panel--rtl" data-letter="ar" dir="rtl" lang="ar">
+              <p>
+                يسعدنا أن نشارككم بداية فصل جديد في حياتنا، يجمع بين عائلتين وثقافتين
+                ووعد واحد بالمحبة والاحترام.
+              </p>
+              <p class="letter-sign">مع المحبة، مينجون وليلى</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section section--details" id="details">
+          <div class="section__inner">
+            <div class="section__header">
+              <p class="section-kicker">Wedding Day</p>
+              <h2>예식 안내</h2>
+            </div>
+            <div class="detail-grid">
+              <article class="detail-card">
+                <span class="detail-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 2v4M16 2v4M4 10h16" />
+                    <rect x="4" y="4" width="16" height="18" rx="2" />
+                  </svg>
+                </span>
+                <h3>날짜와 시간</h3>
+                <p>2026년 10월 24일 토요일<br />오후 12시 30분</p>
+              </article>
+              <article class="detail-card">
+                <span class="detail-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+                    <circle cx="12" cy="10" r="2.5" />
+                  </svg>
+                </span>
+                <h3>장소</h3>
+                <p>서울 라움아트센터 그레이스홀<br />서울 강남구 언주로 564</p>
+              </article>
+              <article class="detail-card">
+                <span class="detail-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 7h18M6 7v12M18 7v12M8 11h8M8 15h8" />
+                  </svg>
+                </span>
+                <h3>예식 순서</h3>
+                <p>입장 · 혼인서약 · 축가 · 사진촬영<br />피로연은 예식 후 이어집니다.</p>
+              </article>
+              <article class="detail-card">
+                <span class="detail-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 3.11 5.18 2 2 0 0 1 5.1 3h3a2 2 0 0 1 2 1.72c.12.9.32 1.78.6 2.63a2 2 0 0 1-.45 2.11L9 10.7a16 16 0 0 0 4.3 4.3l1.24-1.25a2 2 0 0 1 2.11-.45c.85.28 1.73.48 2.63.6A2 2 0 0 1 22 16.92Z" />
+                  </svg>
+                </span>
+                <h3>연락처</h3>
+                <p>
+                  신랑측 010-1234-5678<br />
+                  신부측 +20-100-000-0000
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--directions" id="directions">
+          <div class="section__inner directions-layout">
+            <div>
+              <p class="section-kicker">Map &amp; Travel</p>
+              <h2>오시는 길</h2>
+              <p class="lead">
+                한국 하객에게는 주차와 대중교통을, 해외 하객에게는 공항·숙소 이동 정보를
+                우선 배치했습니다.
+              </p>
+              <div class="map-actions">
+                <a class="button button--outline" href="https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EB%9D%BC%EC%9B%80%EC%95%84%ED%8A%B8%EC%84%BC%ED%84%B0" target="_blank" rel="noreferrer">
+                  네이버지도
+                </a>
+                <a class="button button--outline" href="https://map.kakao.com/link/search/%EC%84%9C%EC%9A%B8%20%EB%9D%BC%EC%9B%80%EC%95%84%ED%8A%B8%EC%84%BC%ED%84%B0" target="_blank" rel="noreferrer">
+                  카카오맵
+                </a>
+                <a class="button button--outline" href="https://www.google.com/maps/search/?api=1&query=Raum+Art+Center+Seoul" target="_blank" rel="noreferrer">
+                  Google Maps
+                </a>
+              </div>
+            </div>
+            <div class="travel-card">
+              <div class="guide-tabs" role="tablist" aria-label="하객 안내">
+                <button class="guide-tab is-active" type="button" role="tab" aria-selected="true" data-guide="kr">
+                  한국 하객
+                </button>
+                <button class="guide-tab" type="button" role="tab" aria-selected="false" data-guide="global">
+                  Overseas
+                </button>
+              </div>
+              <div class="guide-panel is-active" data-guide-panel="kr">
+                <p><strong>주차</strong> 예식장 지하 주차장 2시간 무료</p>
+                <p><strong>지하철</strong> 수인분당선 선정릉역 4번 출구 도보 7분</p>
+                <p><strong>버스</strong> 차병원사거리 정류장 하차</p>
+              </div>
+              <div class="guide-panel" data-guide-panel="global">
+                <p><strong>Airport</strong> Incheon Airport to Gangnam by AREX + subway or airport limousine.</p>
+                <p><strong>Stay</strong> Recommended area: Gangnam, COEX, Seolleung.</p>
+                <p><strong>FAQ</strong> English help desk will be available on the wedding day.</p>
+              </div>
+              <button class="scarab-token scarab-token--travel" type="button" data-episode="travel" aria-label="여행 이야기 열기"></button>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--gallery" id="gallery">
+          <div class="section__inner">
+            <div class="section__header">
+              <p class="section-kicker">Moments</p>
+              <h2>우리의 장면들</h2>
+            </div>
+            <div class="gallery-grid">
+              <figure class="photo-card photo-card--wide">
+                <img src="assets/hero-seoul-cairo.png" loading="lazy" alt="서울과 카이로가 이어지는 일러스트" />
+                <figcaption>서울과 카이로 사이에 놓인 약속</figcaption>
+              </figure>
+              <figure class="photo-card photo-card--illustrated">
+                <div class="mini-poster mini-poster--nile" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>
+                <figcaption>나일 블루와 골드로 만든 웨딩 팔레트</figcaption>
+              </figure>
+              <figure class="photo-card photo-card--illustrated">
+                <div class="mini-poster mini-poster--ring" aria-hidden="true">
+                  <span></span><span></span>
+                </div>
+                <figcaption>오아시스에서 만난 두 개의 반지</figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--quest" id="quest">
+          <div class="section__inner quest-layout">
+            <div>
+              <p class="section-kicker">Mini Quest</p>
+              <h2>숨은 스카라브</h2>
+              <p class="lead">
+                작은 상징을 모으면 두 사람의 에피소드가 열립니다.
+              </p>
+            </div>
+            <div class="quest-panel">
+              <div class="quest-panel__top">
+                <span>발견 <strong id="scarabCount">0/5</strong></span>
+                <button class="text-button" type="button" id="resetQuest">초기화</button>
+              </div>
+              <div class="episode-list" id="episodeList" aria-live="polite"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section section--rsvp" id="rsvp">
+          <div class="section__inner rsvp-layout">
+            <div class="rsvp-copy">
+              <p class="section-kicker">RSVP</p>
+              <h2>피라미드 문을 열어주세요</h2>
+              <p class="lead">
+                참석 여부와 동행 정보를 남겨주시면 예식 준비에 큰 도움이 됩니다.
+              </p>
+              <div class="pyramid-gate" id="pyramidGate" aria-hidden="true">
+                <div class="pyramid-gate__sun"></div>
+                <div class="pyramid-gate__body">
+                  <span class="pyramid-gate__door pyramid-gate__door--left"></span>
+                  <span class="pyramid-gate__door pyramid-gate__door--right"></span>
+                </div>
+                <p id="rsvpThanks">문이 열리면 감사 인사가 도착합니다.</p>
+              </div>
+            </div>
+            <form class="rsvp-form" id="rsvpForm">
+              <label>
+                이름
+                <input name="name" type="text" autocomplete="name" placeholder="성함" required />
+              </label>
+              <fieldset>
+                <legend>참석 여부</legend>
+                <label class="choice">
+                  <input type="radio" name="attendance" value="yes" required />
+                  참석합니다
+                </label>
+                <label class="choice">
+                  <input type="radio" name="attendance" value="no" />
+                  마음으로 축하합니다
+                </label>
+              </fieldset>
+              <label>
+                동행 인원
+                <select name="companions">
+                  <option value="0">없음</option>
+                  <option value="1">1명</option>
+                  <option value="2">2명</option>
+                  <option value="3">3명 이상</option>
+                </select>
+              </label>
+              <label>
+                식사
+                <select name="meal">
+                  <option value="regular">일반식</option>
+                  <option value="vegetarian">채식</option>
+                  <option value="halal">할랄</option>
+                  <option value="none">식사 안 함</option>
+                </select>
+              </label>
+              <label>
+                메시지
+                <textarea name="message" rows="4" placeholder="축하 메시지를 남겨주세요"></textarea>
+              </label>
+              <button class="button button--primary button--full" type="submit">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="m20 6-11 11-5-5" />
+                </svg>
+                RSVP 보내기
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <section class="section section--guestbook" id="guestbook">
+          <div class="section__inner">
+            <div class="section__header">
+              <p class="section-kicker">Guestbook</p>
+              <h2>사막 밤하늘에 별 남기기</h2>
+            </div>
+            <form class="guestbook-form" id="guestbookForm">
+              <input name="guestName" type="text" placeholder="이름" required />
+              <input name="guestMessage" type="text" placeholder="축하 메시지" required />
+              <button class="button button--primary" type="submit">별 남기기</button>
+            </form>
+            <div class="star-sky" id="starSky" aria-label="축하 메시지 별자리"></div>
+            <p class="star-message" id="starMessage" aria-live="polite">별을 누르면 메시지가 보입니다.</p>
+          </div>
+        </section>
+
+        <section class="section section--gift" id="gift">
+          <div class="section__inner gift-layout">
+            <div>
+              <p class="section-kicker">With Thanks</p>
+              <h2>마음 전하실 곳</h2>
+              <p class="lead">
+                멀리서도 마음을 보내주시는 분들께 감사드립니다. 참석과 축복만으로도 충분합니다.
+              </p>
+            </div>
+            <details class="gift-details">
+              <summary>계좌 및 선물 안내</summary>
+              <p>신랑측 국민 000000-00-000000 김민준</p>
+              <p>신부측 WISE / IBAN 정보는 가족에게 문의</p>
+            </details>
+          </div>
+        </section>
+
+        <section class="section section--manager" id="manager">
+          <div class="section__inner manager-layout">
+            <div>
+              <p class="section-kicker">Dashboard</p>
+              <h2>RSVP 로컬 요약</h2>
+            </div>
+            <div class="manager-panel">
+              <div class="stats-grid" id="statsGrid"></div>
+              <button class="button button--outline" type="button" id="exportCsv">CSV 내보내기</button>
+            </div>
+            <div class="qr-panel">
+              <img id="qrImage" alt="초대장 URL QR 코드" loading="lazy" />
+              <button class="text-button" type="button" id="copyUrl">URL 복사</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>민준 · 라일라의 결혼식에 초대합니다.</p>
+        <a href="#top">맨 위로</a>
+      </footer>
+
+      <nav class="bottom-nav" aria-label="빠른 이동">
+        <a href="#details">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 2v4M16 2v4M4 10h16" />
+            <rect x="4" y="4" width="16" height="18" rx="2" />
+          </svg>
+          일정
+        </a>
+        <a href="#directions">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+            <circle cx="12" cy="10" r="2.5" />
+          </svg>
+          지도
+        </a>
+        <a href="#rsvp">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m20 6-11 11-5-5" />
+          </svg>
+          RSVP
+        </a>
+        <a href="#guestbook">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3 9.4 8.3 3.5 9.2l4.3 4.1-1 5.9L12 16.4l5.2 2.8-1-5.9 4.3-4.1-5.9-.9Z" />
+          </svg>
+          방명록
+        </a>
+      </nav>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
