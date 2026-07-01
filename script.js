@@ -292,7 +292,7 @@ function setupScarabs() {
     found = new Set();
     writeJson(STORAGE.scarabs, []);
     render();
-    showToast("스카라브 기록을 초기화했습니다.");
+    showToast("별 기록을 초기화했습니다.");
   });
 
   render();

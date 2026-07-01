@@ -666,24 +666,22 @@ summary:focus-visible,
   position: absolute;
   right: 18px;
   top: 18px;
-  width: 26px;
-  height: 26px;
-  border: 1px solid rgba(199, 154, 58, 0.48);
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(199, 154, 58, 0.34);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 6px 14px rgba(19, 40, 58, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--gold);
+  box-shadow: 0 6px 14px rgba(19, 40, 58, 0.06);
 }
 
 .scarab-token::before {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-  content: "";
-  transform: translate(-50%, -50%);
+  content: "✦";
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.92rem;
+  line-height: 1;
 }
 
 .scarab-token::after {
@@ -691,12 +689,13 @@ summary:focus-visible,
 }
 
 .scarab-token.is-found {
-  border-color: rgba(10, 64, 87, 0.22);
+  border-color: rgba(199, 154, 58, 0.72);
   background: var(--gold);
+  color: var(--white);
 }
 
 .scarab-token.is-found::before {
-  background: var(--white);
+  content: "✦";
 }
 
 .scarab-token--travel {
