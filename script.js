@@ -104,7 +104,7 @@ function createIcs() {
   const lines = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
-    "PRODID:-//Our Oasis Wedding//Mobile Invitation//KO",
+    "PRODID:-//Givin Sia Wedding//Mobile Invitation//KO",
     "CALSCALE:GREGORIAN",
     "BEGIN:VEVENT",
     `UID:${Date.now()}@our-oasis-wedding`,
