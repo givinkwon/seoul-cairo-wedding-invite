@@ -8,14 +8,14 @@
 - 서울에서 카이로까지 이어지는 히어로 이미지와 러브스토리
 - 한국어 / English / العربية 초대 문구 탭
 - BGM 토글, 일정 `.ics` 저장, 실제 Google 지도 임베드, 지도 앱 링크, URL 공유, QR 코드
-- RSVP 제출 후 피라미드 문 열림 효과
+- 참석 여부 제출 후 피라미드 문 열림 효과
 - 숨은 별 미니게임
 - 사막 밤하늘 별 방명록
-- 별도 `admin.html` RSVP 확인 페이지와 CSV 내보내기
+- 별도 `admin.html` 참석 여부 확인 페이지와 CSV 내보내기
 
 ## 수정 포인트
 
 - 기본 예식 정보: `script.js`의 `EVENT`와 `index.html`의 이름, 날짜, 장소 텍스트
 - 지도 임베드와 링크: `index.html`의 `#directions` 섹션
 - 히어로 이미지: `assets/hero-seoul-cairo.png`
-- RSVP/방명록 저장소: 현재는 브라우저 `localStorage` 기반이며, 관리 확인은 `admin.html`에서 합니다. 실제 서비스에서는 Supabase/Firebase API로 교체하면 됩니다.
+- 참석 여부/방명록 저장소: 현재는 브라우저 `localStorage` 기반이며, 관리 확인은 `admin.html`에서 합니다. 실제 서비스에서는 Supabase/Firebase API로 교체하면 됩니다.

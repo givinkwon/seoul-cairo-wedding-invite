@@ -436,7 +436,7 @@ function setupRsvp() {
           ? `${entry.name}님, 우리의 여정에 함께해주셔서 감사합니다.`
           : `${entry.name}님, 보내주신 마음 오래 간직하겠습니다.`;
     }
-    showToast("RSVP가 저장되었습니다.");
+    showToast("참석 여부가 저장되었습니다.");
   });
 }
 
@@ -459,7 +459,7 @@ function setupCsvExport() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "wedding-rsvp.csv";
+    link.download = "wedding-attendance.csv";
     document.body.appendChild(link);
     link.click();
     link.remove();
