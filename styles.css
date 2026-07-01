@@ -829,7 +829,40 @@ summary:focus-visible,
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-top: 16px;
+}
+
+.map-embed-card {
+  overflow: hidden;
   margin-top: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 38px rgba(4, 20, 30, 0.2);
+}
+
+.map-embed-card iframe {
+  width: 100%;
+  height: clamp(280px, 48vw, 390px);
+  border: 0;
+}
+
+.map-embed-card__caption {
+  display: grid;
+  gap: 2px;
+  padding: 13px 15px 15px;
+  color: var(--ink);
+}
+
+.map-embed-card__caption strong {
+  color: var(--navy);
+  line-height: 1.25;
+}
+
+.map-embed-card__caption span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 800;
 }
 
 .travel-card {
