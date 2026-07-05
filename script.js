@@ -78,6 +78,7 @@ const ATTENDANCE_EXPORT_FIELDS = [
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+const prefersReducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches || false;
 
 function endpoint() {
   return ATTENDANCE_ENDPOINT.trim();
@@ -218,6 +219,81 @@ function setupStorageNotices() {
   if (guestbookNote) guestbookNote.textContent = guestbookMessage;
   if (storageStatus) storageStatus.textContent = adminMessage;
   if (adminDataNote) adminDataNote.textContent = hasRemoteStore() ? "Google Sheets 기준입니다." : "현재 브라우저에 저장된 미리보기 데이터 기준입니다.";
+}
+
+function setupScrollAnimations() {
+  if (prefersReducedMotion) {
+    document.documentElement.classList.remove("drag-animate");
+    return;
+  }
+
+  document.documentElement.classList.add("drag-animate");
+
+  const revealSelectors = [
+    ".section__header",
+    ".detail-card",
+    ".letter-panel.is-active",
+    ".map-embed-card",
+    ".travel-card",
+    ".rsvp-copy",
+    ".rsvp-form",
+    ".photo-card",
+    ".story-card",
+    ".gift-details",
+    ".guestbook-form",
+    ".star-sky",
+    ".quest-panel",
+    ".admin-section",
+  ];
+
+  const revealTargets = revealSelectors.flatMap((selector) => $$(selector));
+  const seen = new Set();
+  let index = 0;
+
+  revealTargets.forEach((element) => {
+    if (seen.has(element)) return;
+    seen.add(element);
+    element.classList.add("reveal");
+    if (element.matches(".detail-card, .photo-card, .story-card, .travel-card, .admin-section")) {
+      element.classList.add("reveal--soft");
+    }
+    element.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 70}ms`);
+    index += 1;
+  });
+
+  if (!("IntersectionObserver" in window)) {
+    seen.forEach((element) => element.classList.add("is-visible"));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "0px 0px -12% 0px", threshold: 0.08 }
+  );
+
+  seen.forEach((element) => observer.observe(element));
+
+  let ticking = false;
+  function updateHeroShift() {
+    const shift = Math.min(34, Math.max(0, window.scrollY * 0.08));
+    document.documentElement.style.setProperty("--hero-shift", `${shift}px`);
+    ticking = false;
+  }
+
+  function requestHeroShift() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateHeroShift);
+  }
+
+  updateHeroShift();
+  window.addEventListener("scroll", requestHeroShift, { passive: true });
 }
 
 function setupLanguageTabs() {
@@ -732,6 +808,7 @@ function setupGuestbook() {
 }
 
 async function init() {
+  setupScrollAnimations();
   setupStorageNotices();
   setupLanguageTabs();
   setupCalendarDownload();
