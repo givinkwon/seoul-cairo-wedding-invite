@@ -14,8 +14,9 @@
           <p class="section-kicker">참석 관리</p>
           <h1>관리 확인 페이지</h1>
           <p class="lead">
-            초대장 본문에서는 보이지 않는 참석 여부 확인용 페이지입니다.
+            참석 여부와 방명록을 확인하고, 초대장 URL과 QR을 관리합니다.
           </p>
+          <p class="storage-status" id="storageStatus"></p>
         </div>
         <div class="admin-actions">
           <a class="button button--outline" href="./">초대장 열기</a>
@@ -30,8 +31,8 @@
               <p class="section-kicker">Summary</p>
               <h2 id="statsTitle">응답 요약</h2>
             </div>
-            <p class="admin-note">
-              현재 브라우저에 저장된 참석 여부 기준입니다.
+            <p class="admin-note" id="adminDataNote">
+              저장소 상태를 확인하는 중입니다.
             </p>
           </div>
           <div class="stats-grid" id="statsGrid"></div>
@@ -40,8 +41,8 @@
         <section class="admin-section" aria-labelledby="listTitle">
           <div class="admin-section__head">
             <div>
-              <p class="section-kicker">Responses</p>
-              <h2 id="listTitle">응답 목록</h2>
+              <p class="section-kicker">Attendance</p>
+              <h2 id="listTitle">참석 응답 목록</h2>
             </div>
           </div>
           <div class="rsvp-table-wrap">
@@ -50,15 +51,41 @@
                 <tr>
                   <th scope="col">시간</th>
                   <th scope="col">이름</th>
+                  <th scope="col">구분</th>
+                  <th scope="col">연락처</th>
                   <th scope="col">참석</th>
-                  <th scope="col">동행</th>
+                  <th scope="col">성인</th>
+                  <th scope="col">아동</th>
                   <th scope="col">식사</th>
-                  <th scope="col">메시지</th>
+                  <th scope="col">식이</th>
+                  <th scope="col">전달사항</th>
                 </tr>
               </thead>
               <tbody id="rsvpTableBody"></tbody>
             </table>
             <p class="empty-state" id="rsvpEmpty">아직 저장된 참석 여부가 없습니다.</p>
+          </div>
+        </section>
+
+        <section class="admin-section" aria-labelledby="guestbookTitle">
+          <div class="admin-section__head">
+            <div>
+              <p class="section-kicker">Guestbook</p>
+              <h2 id="guestbookTitle">방명록 메시지</h2>
+            </div>
+          </div>
+          <div class="rsvp-table-wrap">
+            <table class="rsvp-table">
+              <thead>
+                <tr>
+                  <th scope="col">시간</th>
+                  <th scope="col">이름</th>
+                  <th scope="col">메시지</th>
+                </tr>
+              </thead>
+              <tbody id="guestbookTableBody"></tbody>
+            </table>
+            <p class="empty-state" id="guestbookEmpty">아직 저장된 방명록 메시지가 없습니다.</p>
           </div>
         </section>
 
